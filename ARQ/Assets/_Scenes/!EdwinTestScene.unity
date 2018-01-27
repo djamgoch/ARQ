@@ -234,6 +234,11 @@ Prefab:
       propertyPath: OnReceiveTransmission.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetAsCurrentSatellite
       objectReference: {fileID: 0}
+    - target: {fileID: 114519074178223616, guid: 29f3d15eb5a5a0843bd4d742f75f8700,
+        type: 2}
+      propertyPath: OnReceiveTransmission.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29f3d15eb5a5a0843bd4d742f75f8700, type: 2}
   m_IsPrefabParent: 0
