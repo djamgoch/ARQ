@@ -12,4 +12,9 @@ public class SatellitePlayerController : MonoBehaviour {
             this.transform.Rotate(Vector3.forward, -Input.GetAxis("Horizontal"));
         }
 	}
+
+    public void SetAsCurrentSatellite()
+    {
+        LevelManager.instance.SetCurrentSatellite(this);
+    }
 }
