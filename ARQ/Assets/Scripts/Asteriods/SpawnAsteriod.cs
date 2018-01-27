@@ -18,6 +18,9 @@ public class SpawnAsteriod : MonoBehaviour {
 		
 	}
 
+
+    
+    //Spawn asteriod
     void Spawn()
     {
         Instantiate(Asteriod, SpawnPoint, Asteriod.transform.rotation);
