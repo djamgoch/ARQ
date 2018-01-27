@@ -21,4 +21,12 @@ public class TransmissionReceiverComponent : MonoBehaviour {
         Debug.LogFormat("Activated by {0}!", sendingPlanet.name);
         this.GetComponent<MeshRenderer>().material.color = Color.green;
     }
+    public void ReceiveTransmission()
+    {
+        OnReceiveTransmission.Invoke(); // Call all the functions under this event in the editor
+        isAlreadyActivated = true;      // Toggle this on, so that it can't get activated again (temp to avoid multiple physics calls per frame)
+
+        // For debugging
+        this.GetComponent<MeshRenderer>().material.color = Color.green;
+    }
 }
