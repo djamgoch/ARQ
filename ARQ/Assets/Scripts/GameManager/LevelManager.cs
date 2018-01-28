@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour {
 
     public static LevelManager instance;
+	public int numberOfPlanetsToActivate = 0;
 
-    public PlanetComponent startingPlanet;
+	private int numOfPlanetsActivated;
+	private bool playerBeatLevel;
+	public PlanetComponent startingPlanet;
     private SatellitePlayerController currentSatellite;  // The satellite that is currently being controlled
 	private Scene currentScene;  // represents the current level
 
@@ -17,6 +20,8 @@ public class LevelManager : MonoBehaviour {
         instance = this;
 
         currentSatellite = startingPlanet.satellite;
+		numOfPlanetsActivated = 0;
+		playerBeatLevel = false;
     }
 
     void Start()
@@ -35,12 +40,27 @@ public class LevelManager : MonoBehaviour {
         currentSatellite = newSatellite;
     }
 
+	public void UpdateScore()
+	{
+		++numOfPlanetsActivated;
+
+		if (numOfPlanetsActivated >= numberOfPlanetsToActivate)
+			playerBeatLevel = true;
+	}
+
 	public void BeginNextLevel()
 	{
-        if (AudioManager.instance != null)
-        {
-            AudioManager.instance.PlayNextARQStage();
-        }
-        SceneManager.LoadScene(currentScene.buildIndex + 1);
+		if (playerBeatLevel)
+		{
+			if (AudioManager.instance != null)
+			{
+				AudioManager.instance.PlayNextARQStage();
+			}
+			SceneManager.LoadScene(currentScene.buildIndex + 1);
+		}
+		else
+		{
+			SceneManager.LoadScene(currentScene.buildIndex);
+		}
 	}
 }
