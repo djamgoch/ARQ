@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19110203, g: 0.30820608, b: 0.42630678, a: 1}
+  m_IndirectSpecularColor: {r: 0.10130968, g: 0.17343229, b: 0.25469968, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -322,6 +322,26 @@ Prefab:
       propertyPath: OnReceiveTransmission.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.9246543
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.3808075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -224.767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7745916dbf548864dac85d606050d63f, type: 2}
   m_IsPrefabParent: 0
@@ -516,6 +536,18 @@ Prefab:
     - target: {fileID: 4969429676156708, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.2507583
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.9680497
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 330.955
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
@@ -4268,6 +4300,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4955369354462396, guid: 34930a1fd7b42fb438761fddf9c2c198, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955369354462396, guid: 34930a1fd7b42fb438761fddf9c2c198, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.39166608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955369354462396, guid: 34930a1fd7b42fb438761fddf9c2c198, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9201074
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955369354462396, guid: 34930a1fd7b42fb438761fddf9c2c198, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 46.116
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34930a1fd7b42fb438761fddf9c2c198, type: 2}
   m_IsPrefabParent: 0
@@ -4614,8 +4662,19 @@ MonoBehaviour:
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetAsCurrentSatellite
+      - m_Target: {fileID: 2074691547}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1030792331}
+        m_MethodName: BeginNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4625,8 +4684,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1030792331}
-        m_MethodName: BeginNextLevel
+      - m_Target: {fileID: 1803846010}
+        m_MethodName: SetAsCurrentSatellite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
