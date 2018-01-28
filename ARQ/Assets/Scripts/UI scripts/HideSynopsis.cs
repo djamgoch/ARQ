@@ -12,11 +12,10 @@ public class HideSynopsis : MonoBehaviour {
         hidden = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-        if (Input.anyKey && !hidden)
+    public void HideText()
+    {
+        if (!hidden)
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
