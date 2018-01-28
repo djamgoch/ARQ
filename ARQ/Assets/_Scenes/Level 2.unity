@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.082653664, g: 0.06917947, b: 0.044657543, a: 1}
+  m_IndirectSpecularColor: {r: 0.07257006, g: 0.05991914, b: 0.03644066, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266564479}
   m_Layer: 0
-  m_Name: PlanetSatelliteGroupPine
+  m_Name: FourthPlanetSatelliteGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,6 +305,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4070913764302716, guid: 7af15e7a999ac8a4f9927a6e19982723,
     type: 2}
   m_PrefabInternal: {fileID: 847573475}
+--- !u!1 &847573477 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1821836790993782, guid: 7af15e7a999ac8a4f9927a6e19982723,
+    type: 2}
+  m_PrefabInternal: {fileID: 847573475}
+--- !u!114 &847573478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847573477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4993a67d78460745b0ff2cf499ca51d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBeingControlled: 0
+  planet: {fileID: 0}
 --- !u!1001 &897286920
 Prefab:
   m_ObjectHideFlags: 0
@@ -354,6 +372,11 @@ Prefab:
       propertyPath: startingPlanet
       value: 
       objectReference: {fileID: 913453935}
+    - target: {fileID: 114326230792551818, guid: a536d14ff1908274bbbea511d8b1f256,
+        type: 2}
+      propertyPath: numberOfPlanetsToActivate
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a536d14ff1908274bbbea511d8b1f256, type: 2}
   m_IsPrefabParent: 0
@@ -475,7 +498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1354409808435586, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
       propertyPath: m_Name
-      value: PlanetSatelliteGroupHavay (1)
+      value: FirstPlanetSatelliteGroup
       objectReference: {fileID: 0}
     - target: {fileID: 1354409808435586, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
       propertyPath: m_IsActive
@@ -555,6 +578,10 @@ Prefab:
     - target: {fileID: 4146482019852868, guid: ee27d0bf064937143a55cd22988e6e4e, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333636489843656, guid: ee27d0bf064937143a55cd22988e6e4e, type: 2}
+      propertyPath: m_Name
+      value: SecondPlanetSatelliteGroup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee27d0bf064937143a55cd22988e6e4e, type: 2}
@@ -4078,24 +4105,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a6075985c968b489093f68cdec24d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlreadyActivated: 0
+  state: 0
   activationGlow: {fileID: 1236793914}
+  OnTransmissionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTransmissionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1678462662}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetAsCurrentSatellite
+      - m_Target: {fileID: 1678462663}
+        m_MethodName: ActivatePlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4142,7 +4168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d372b7ee21a0ae4189217461e247525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  satellite: {fileID: 0}
+  satellite: {fileID: 847573478}
 --- !u!95 &1678462664
 Animator:
   serializedVersion: 3
@@ -4277,6 +4303,10 @@ Prefab:
     - target: {fileID: 4874620858538758, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 133.613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354409808435586, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
+      propertyPath: m_Name
+      value: ThirdPlanetSatelliteGroup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}

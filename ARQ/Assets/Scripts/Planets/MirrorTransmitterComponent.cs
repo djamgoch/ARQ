@@ -14,18 +14,16 @@ public class MirrorTransmitterComponent : MonoBehaviour {
     public Vector3 emitDirection;
     private GameObject transmissionRendererPrefab;
     private TransmissionRenderer mirrorTransmission;    // The transmission coming from the mirror
-    //private GameObject satellite;
+    private TransmissionReceiverComponent currentReceiver;
 
     void Awake()
     {
         emitDirection = emitDirection.normalized;
         transmissionRendererPrefab = Resources.Load("TransmissionLineRenderer") as GameObject;
-        //planetComponent = this.GetComponent<PlanetComponent>();
     }
 
     void Start()
     {
-        //mirror = mirrorComponent.gameObject;
         GameObject mirrorTransmissionObj = Instantiate(transmissionRendererPrefab, this.transform.position, Quaternion.identity);
         mirrorTransmission = mirrorTransmissionObj.GetComponent<TransmissionRenderer>();
     }
@@ -33,14 +31,6 @@ public class MirrorTransmitterComponent : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // Calculate the direction from this planet to it's coupled satellite
-        //dirToSatellite = satellite.transform.position - this.transform.position;
-
-        // Calculate the direction of the ray reflected off the satellite using its normal
-        //RaycastHit mirrorHitInfo;
-        //Physics.Raycast(this.transform.position, dirToSatellite, out satelliteHitInfo);
-        //dirReflectOffMirror = Vector3.Reflect(dirToSatellite, satelliteHitInfo.normal).normalized;
-
         // Check for object hit by reflected ray
         RaycastHit reflectedHitInfo;
 
@@ -54,7 +44,7 @@ public class MirrorTransmitterComponent : MonoBehaviour {
             mirrorTransmission.SetPositions(this.transform.position, reflectedHitInfo.point);
             // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
             TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-            if (receiverComponent != null/* && receiverComponent.isAlreadyActivated == false*/)
+            if (receiverComponent != null && receiverComponent.state != TransmissionReceiverComponent.ReceiverState.ACTIVATED)
             {
                 receiverComponent.ReceiveTransmission();
             }

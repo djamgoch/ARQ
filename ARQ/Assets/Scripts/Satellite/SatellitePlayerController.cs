@@ -16,11 +16,11 @@ public class SatellitePlayerController : MonoBehaviour {
 		//Vector3 normDir = (this.transform.position - planet.position).normalized;
 		Vector3 normDir = (planet.position - this.transform.position).normalized;
 		Vector3 currDir = this.transform.up.normalized;
-		Debug.Log(this.transform.parent.name + ": normal vector = " + normDir);
-		Debug.Log(this.transform.parent.name + ": current vector = " + currDir);
+		//Debug.Log(this.transform.parent.name + ": normal vector = " + normDir);
+		//Debug.Log(this.transform.parent.name + ": current vector = " + currDir);
 		//relativeZAngle = Quaternion.FromToRotation(normDir, currDir).eulerAngles.z;
 		relativeZAngle = Vector3.Angle(normDir, currDir);
-		Debug.Log(name + ": relative Z angle = " + relativeZAngle);          // -190
+		//Debug.Log(name + ": relative Z angle = " + relativeZAngle);          // -190
 		normZAngle = 0.0f;
 	}
 

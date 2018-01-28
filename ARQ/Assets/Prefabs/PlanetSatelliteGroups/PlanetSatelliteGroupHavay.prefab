@@ -1197,24 +1197,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a6075985c968b489093f68cdec24d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlreadyActivated: 0
+  state: 0
   activationGlow: {fileID: 198596650960702640}
+  OnTransmissionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTransmissionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114305526299774218}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 114739541188747936}
-        m_MethodName: SetAsCurrentSatellite
+      - m_Target: {fileID: 114209052058591688}
+        m_MethodName: ActivatePlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1261,6 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBeingControlled: 0
+  planet: {fileID: 0}
 --- !u!198 &198596650960702640
 ParticleSystem:
   m_ObjectHideFlags: 1

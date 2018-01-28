@@ -66,28 +66,16 @@ public class PlanetTransmitterComponent : MonoBehaviour {
             {
                 // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
                 TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-                if (receiverComponent != null/* && receiverComponent.isAlreadyActivated == false*/)
+                if (receiverComponent != null)
                 {
                     receiverComponent.TransmissionEnter();
                     currentReceiver = receiverComponent;
-
-                    //if (receiverComponent != prevReceiver && prevReceiver != null)
-                    //{
-                    //    prevReceiver.DisableGlow();     // Hacky code to disable glow
-                    //}
-                    //prevReceiver = receiverComponent;   // Track this receiver so its glow can be disabled after losing the transmission.
-                    //receiverComponent.EnableGlow(Color.yellow);
-
-                    //if (Input.GetKeyDown(KeyCode.Space))
-                    //{
-                    //    receiverComponent.ReceiveTransmission(this);
-                    //}
                 }
             }
-            else if (currentReceiver != null)
-            {
-                currentReceiver.DisableGlow(); // Hacky code to disable glow
-            }
+            //else if (currentReceiver != null)
+            //{
+            //    currentReceiver.DisableGlow(); // Hacky code to disable glow
+            //}
         }
         else
         {
@@ -97,7 +85,6 @@ public class PlanetTransmitterComponent : MonoBehaviour {
             {
                 currentReceiver.TransmissionExit();
                 currentReceiver = null;
-                //currentReceiver.DisableGlow(); // Hacky code to disable glow
             }
         }
     }

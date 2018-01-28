@@ -204,24 +204,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a6075985c968b489093f68cdec24d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlreadyActivated: 0
+  state: 0
   activationGlow: {fileID: 472935583}
+  OnTransmissionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTransmissionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 269168417}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2086913479}
-        m_MethodName: SetAsCurrentSatellite
+      - m_Target: {fileID: 269168418}
+        m_MethodName: ActivatePlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -516,6 +515,11 @@ Prefab:
       propertyPath: startingPlanet
       value: 
       objectReference: {fileID: 1365328256}
+    - target: {fileID: 114326230792551818, guid: a536d14ff1908274bbbea511d8b1f256,
+        type: 2}
+      propertyPath: numberOfPlanetsToActivate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a536d14ff1908274bbbea511d8b1f256, type: 2}
   m_IsPrefabParent: 0
