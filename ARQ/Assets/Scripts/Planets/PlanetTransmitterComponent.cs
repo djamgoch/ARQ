@@ -7,6 +7,11 @@ public class PlanetTransmitterComponent : MonoBehaviour {
     public const float MAX_TRANSMISSION_DISTANCE = 150f; // TODO : Move this somewhere else
 
     private PlanetComponent planetComponent;
+    private GameObject transmissionRendererPrefab;
+
+    private TransmissionRenderer planetTransmission;    // The transmission coming from the planet
+    private TransmissionRenderer satelliteTransmission; // The transmission bouncing off the satellite
+
     private GameObject satellite;
     private Vector3 dirToSatellite;
     private Vector3 dirReflectOffSatellite;
@@ -14,11 +19,18 @@ public class PlanetTransmitterComponent : MonoBehaviour {
     void Awake()
     {
         planetComponent = this.GetComponent<PlanetComponent>();
+        transmissionRendererPrefab = Resources.Load("TransmissionLineRenderer") as GameObject;
     }
 
     void Start()
     {
         satellite = planetComponent.satellite.gameObject;
+
+        GameObject planetTransmissionObj = Instantiate(transmissionRendererPrefab, this.transform.position, Quaternion.identity);
+        planetTransmission = planetTransmissionObj.GetComponent<TransmissionRenderer>();
+
+        GameObject satelliteTransmissionObj = Instantiate(transmissionRendererPrefab, this.transform.position, Quaternion.identity);
+        satelliteTransmission = satelliteTransmissionObj.GetComponent<TransmissionRenderer>();
     }
 
 	// Update is called once per frame
@@ -31,23 +43,35 @@ public class PlanetTransmitterComponent : MonoBehaviour {
         Physics.Raycast(this.transform.position, dirToSatellite, out satelliteHitInfo);
         dirReflectOffSatellite = Vector3.Reflect(dirToSatellite, satelliteHitInfo.normal).normalized;
 
+        // Render the transmimssion
+        planetTransmission.SetPositions(this.transform.position, satellite.transform.position);
+
         // Check for object hit by reflected ray
         RaycastHit reflectedHitInfo;
         bool objectWasHit = Physics.Raycast(satellite.transform.position, dirReflectOffSatellite, out reflectedHitInfo, MAX_TRANSMISSION_DISTANCE);
 
         // If an object was hit and it wasn't this planet
-        if (objectWasHit && reflectedHitInfo.collider.gameObject != this.gameObject)
+        if (objectWasHit)
         {
-            // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
-            TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-			if (receiverComponent != null && receiverComponent.isAlreadyActivated == false && Input.GetKeyDown(KeyCode.Space))
+            satelliteTransmission.SetPositions(satellite.transform.position, reflectedHitInfo.point);
+
+            if (reflectedHitInfo.collider.gameObject != this.gameObject)
             {
-                receiverComponent.ReceiveTransmission(this);
+                // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
+                TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
+                if (receiverComponent != null && receiverComponent.isAlreadyActivated == false && Input.GetKeyDown(KeyCode.Space))
+                {
+                    receiverComponent.ReceiveTransmission(this);
+                }
             }
+        }
+        else
+        {
+            satelliteTransmission.SetPositions(satellite.transform.position, satellite.transform.position + (dirReflectOffSatellite * 500f));
         }
 
         // For debugging to visualize the physics rays
-        Debug.DrawRay(this.transform.position, dirToSatellite, Color.green);
-        Debug.DrawRay(satellite.transform.position, dirReflectOffSatellite * MAX_TRANSMISSION_DISTANCE, Color.green);
+        //Debug.DrawRay(this.transform.position, dirToSatellite, Color.green);
+        //Debug.DrawRay(satellite.transform.position, dirReflectOffSatellite * MAX_TRANSMISSION_DISTANCE, Color.green);
     }
 }
