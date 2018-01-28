@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19211587, g: 0.30976677, b: 0.42855638, a: 1}
+  m_IndirectSpecularColor: {r: 0.19717485, g: 0.31746638, b: 0.4395307, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -210,23 +210,44 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114279765250288380, guid: a278f7aa57811b1408e49ddc380f742f,
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
         type: 2}
-      propertyPath: m_Text
-      value: I'm late for my show. Let's get this over with.
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114562062686284744, guid: a278f7aa57811b1408e49ddc380f742f,
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
         type: 2}
-      propertyPath: m_Text
-      value: Understood.
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114076570338958926, guid: a278f7aa57811b1408e49ddc380f742f,
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
         type: 2}
-      propertyPath: m_Text
-      value: Standby for assistance.
+      propertyPath: m_SizeDelta.x
+      value: -397.80005
       objectReference: {fileID: 0}
-    - target: {fileID: 1304917556331250, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -135.87466
+      objectReference: {fileID: 0}
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 120.52586
+      objectReference: {fileID: 0}
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224266131033154804, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4929,8 +4950,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a6075985c968b489093f68cdec24d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlreadyActivated: 0
+  state: 0
   activationGlow: {fileID: 1002869193}
+  OnTransmissionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTransmissionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
