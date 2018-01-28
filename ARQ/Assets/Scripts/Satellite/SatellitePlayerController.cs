@@ -10,6 +10,7 @@ public class SatellitePlayerController : MonoBehaviour {
 	void Update () {
 		if (isBeingControlled)
         {
+			//Quaternion.Euler this.transform.rotation.z
             this.transform.Rotate(Vector3.forward, -Input.GetAxis("Horizontal") * Time.deltaTime * SATELLITE_ROTATION_SPEED);
         }
 	}

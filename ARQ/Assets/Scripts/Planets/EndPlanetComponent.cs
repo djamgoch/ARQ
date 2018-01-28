@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Redundant class. Delete it if you want to.
 public class EndPlanetComponent : MonoBehaviour {
 
 	// Use this for initialization

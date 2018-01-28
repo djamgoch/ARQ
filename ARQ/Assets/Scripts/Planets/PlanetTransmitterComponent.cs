@@ -40,7 +40,7 @@ public class PlanetTransmitterComponent : MonoBehaviour {
         {
             // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
             TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-            if (receiverComponent != null && receiverComponent.isAlreadyActivated == false)
+			if (receiverComponent != null && receiverComponent.isAlreadyActivated == false && Input.GetKeyDown(KeyCode.Space))
             {
                 receiverComponent.ReceiveTransmission(this);
             }
