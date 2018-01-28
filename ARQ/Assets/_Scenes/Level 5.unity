@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18422052, g: 0.29733822, b: 0.41058153, a: 1}
+  m_IndirectSpecularColor: {r: 0.1952003, g: 0.31437778, b: 0.4351712, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4243,11 +4243,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4717278330902620, guid: 72b14d3d55d52134f84decfebd5e154b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.9
+      value: 9.51
       objectReference: {fileID: 0}
     - target: {fileID: 4717278330902620, guid: 72b14d3d55d52134f84decfebd5e154b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.8
+      value: -4.36
       objectReference: {fileID: 0}
     - target: {fileID: 4717278330902620, guid: 72b14d3d55d52134f84decfebd5e154b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4409,7 +4409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.2
+      value: -4.79
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4545,11 +4545,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 16.7
+      value: 19.81
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -13.8
+      value: -9.94
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4740,7 +4740,7 @@ Prefab:
     - target: {fileID: 114048386010321122, guid: 7bc3f6fd0a3e5884aba439fbb809c2e6,
         type: 2}
       propertyPath: emitDirection.y
-      value: -2
+      value: -0.97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bc3f6fd0a3e5884aba439fbb809c2e6, type: 2}

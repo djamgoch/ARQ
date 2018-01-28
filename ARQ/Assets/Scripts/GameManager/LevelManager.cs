@@ -42,7 +42,6 @@ public class LevelManager : MonoBehaviour {
 
 	public void UpdateScore()
 	{
-        Debug.Log("Update Score");
 		++numOfPlanetsActivated;
 
 		if (numOfPlanetsActivated >= numberOfPlanetsToActivate)

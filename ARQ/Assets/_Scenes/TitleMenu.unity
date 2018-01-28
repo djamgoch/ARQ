@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10634106, g: 0.18231148, b: 0.21974742, a: 1}
+  m_IndirectSpecularColor: {r: 0.11116018, g: 0.18873987, b: 0.22695598, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -766,7 +766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.00003, y: 160.1}
+  m_AnchoredPosition: {x: -4, y: 66}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401910275
@@ -801,7 +801,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Synopsis of the Game
+  m_Text: "Credits: \r\nTeam Raycast\r\n\r\nThomas Abaroa -- Design & 3D Art\r\n\r\nParker
+    Scott -- Design, Writing, Producer\r\n\r\nDavid Jamgochian -- Programming\r\n\r\nKevin
+    Zimmerle -- Programming\r\n\r\nEthan Liu -- Music & Sound\r\n\r\nEdwin Ho -- Design
+    & Programming"
 --- !u!222 &1401910276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1124,7 +1127,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2134229235}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6602b2c1b95128a48824c9bf0f60763f, type: 3}
   m_Name: 

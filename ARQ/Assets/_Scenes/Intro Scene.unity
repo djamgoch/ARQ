@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009396859, g: 0.0075167073, b: 0.0060031815, a: 1}
+  m_IndirectSpecularColor: {r: 0.010279642, g: 0.00830344, b: 0.0065833717, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -487,8 +487,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444001, y: 0.0000019073}
-  m_SizeDelta: {x: 754, y: 379.6}
+  m_AnchoredPosition: {x: 0.000011444001, y: 18.3}
+  m_SizeDelta: {x: 754, y: 343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &976242414
 MonoBehaviour:
@@ -511,7 +511,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebaab41f1dab4f84393515349abcecf0, type: 3}
-    m_FontSize: 28
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
