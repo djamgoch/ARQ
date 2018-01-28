@@ -55,10 +55,12 @@ GameObject:
   - component: {fileID: 4647459099980128}
   - component: {fileID: 33701498775154102}
   - component: {fileID: 23726892535256052}
+  - component: {fileID: 64805055916237914}
   - component: {fileID: 95764687527196634}
   - component: {fileID: 114018469392683254}
   - component: {fileID: 114287940579903506}
   - component: {fileID: 114410323445445590}
+  - component: {fileID: 64182293524818718}
   m_Layer: 0
   m_Name: Planet_Ice_Gray
   m_TagString: Untagged
@@ -72,13 +74,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456323653425672}
-  m_LocalRotation: {x: -0, y: -0, z: -0.44873935, w: 0.89366275}
-  m_LocalPosition: {x: 5.86, y: 5.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9447861, w: 0.3276879}
+  m_LocalPosition: {x: -4.8, y: 7, z: 0}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4955028516079216}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -53.326004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -141.74301}
 --- !u!4 &4647459099980128
 Transform:
   m_ObjectHideFlags: 1
@@ -188,6 +190,34 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824240649969508}
+  m_Mesh: {fileID: 4300000, guid: 41f08c35745be45418cd81746e1fea81, type: 3}
+--- !u!64 &64182293524818718
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824240649969508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 41f08c35745be45418cd81746e1fea81, type: 3}
+--- !u!64 &64805055916237914
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824240649969508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 41f08c35745be45418cd81746e1fea81, type: 3}
 --- !u!65 &65811473877262794
 BoxCollider:
