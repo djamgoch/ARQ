@@ -14,5 +14,12 @@ public class RestartLevel : MonoBehaviour {
             string sceneName = sm.name;
             SceneManager.LoadScene(sceneName);
         }
-	}
+	}/**/
+
+    /*public void RestartGameLevel()
+    {
+        Scene sm = SceneManager.GetActiveScene();
+        string sceneName = sm.name;
+        SceneManager.LoadScene(sceneName);
+    }*/
 }
