@@ -13,15 +13,10 @@ public class SatellitePlayerController : MonoBehaviour {
 
 	private void Start()
 	{
-		//this.transform.GetComponentInParent<Transform>().
 		Vector3 normDir = (this.transform.position - planet.position).normalized;
-		//normZAngle = Quaternion.Euler(normDir).eulerAngles.z;
 		Vector3 currDir = this.transform.up.normalized;
 		relativeZAngle = Quaternion.FromToRotation(normDir, currDir).eulerAngles.z;
 		normZAngle = 0.0f;
-		Debug.Log(relativeZAngle);
-		//relativeZAngle = this.rotation
-		//relativeZAngle = 0.0f;
 	}
 
 	void Update () {

@@ -114,6 +114,47 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &52380653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 52380654}
+  - component: {fileID: 52380655}
+  m_Layer: 0
+  m_Name: Skybox Rotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52380654
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52380653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52380655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52380653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65876b40f1de3a4099234f2c57dda92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 1.2
 --- !u!1001 &310870686
 Prefab:
   m_ObjectHideFlags: 0
@@ -123,7 +164,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.6
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -335,6 +376,26 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.9942736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.1068647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807095681773454, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -192.269
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bbd8386d5cdfb54f956775f0e685323, type: 2}
   m_IsPrefabParent: 0
@@ -393,7 +454,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.8
+      value: -7.6
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -483,7 +544,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1954811425780542, guid: 72b14d3d55d52134f84decfebd5e154b, type: 2}
       propertyPath: m_Name
-      value: Second PlanetSatelliteGroup
+      value: Third PlanetSatelliteGroup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72b14d3d55d52134f84decfebd5e154b, type: 2}
@@ -652,7 +713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1354409808435586, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
       propertyPath: m_Name
-      value: Third PlanetSatelliteGroup
+      value: Second PlanetSatelliteGroup
       objectReference: {fileID: 0}
     - target: {fileID: 4244250588705328, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -999,7 +1060,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -45.2
+      value: -44.4
       objectReference: {fileID: 0}
     - target: {fileID: 4824356689581450, guid: 0c4665f33d0bdc8478cd8fc4a98793fa, type: 2}
       propertyPath: m_LocalPosition.y

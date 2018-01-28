@@ -14,11 +14,8 @@ public class MainMenuBehaviour : MonoBehaviour {
 	void Start () {
 		Cursor.visible = true;
 		currentScene = SceneManager.GetActiveScene();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+        AudioManager.instance.PlayBGM("ARQtitlemenu");
 	}
 
 	/* Starts the game from level 1.
@@ -26,6 +23,9 @@ public class MainMenuBehaviour : MonoBehaviour {
 	 */
 	public void StartNewGame()
 	{
+        AudioManager.instance.PlaySFX("ARQstartgame2");
+        AudioManager.instance.PlayBGM("ARQstage1");
+
 		Cursor.visible = true;
 		SceneManager.LoadScene(Level_1_Scene_Name);
 		//SceneManager.LoadScene(currentScene.buildIndex + 1);

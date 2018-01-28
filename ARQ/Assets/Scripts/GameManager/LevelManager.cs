@@ -37,6 +37,10 @@ public class LevelManager : MonoBehaviour {
 
 	public void BeginNextLevel()
 	{
-		SceneManager.LoadScene(currentScene.buildIndex + 1);
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayNextARQStage();
+        }
+        SceneManager.LoadScene(currentScene.buildIndex + 1);
 	}
 }

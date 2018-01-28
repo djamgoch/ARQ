@@ -20,6 +20,8 @@ public class SwapUI : MonoBehaviour {
             transform.GetChild(1).gameObject.SetActive(!transform.GetChild(1).gameObject.activeSelf);
             transform.GetChild(4).gameObject.SetActive(!transform.GetChild(4).gameObject.activeSelf);
             timeToSwap = 10.0f;
+
+            AudioManager.instance.PlaySFX("ARQstartgame1");
         }
         else
         {
