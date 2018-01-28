@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19717485, g: 0.31746638, b: 0.4395307, a: 1}
+  m_IndirectSpecularColor: {r: 0.19431409, g: 0.31309766, b: 0.43332905, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1781192726714520, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
@@ -361,11 +361,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0.9246543
+      value: -0.92465436
       objectReference: {fileID: 0}
     - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.3808075
+      value: -0.38080752
       objectReference: {fileID: 0}
     - target: {fileID: 4598736290443580, guid: 7745916dbf548864dac85d606050d63f, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -605,6 +605,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -168.65302}
+--- !u!1 &621105899 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1304917556331250, guid: a278f7aa57811b1408e49ddc380f742f,
+    type: 2}
+  m_PrefabInternal: {fileID: 79378089}
+--- !u!114 &621105900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 621105899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9912b3356deff1438597d64de76443f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &621105905 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224017340692459572, guid: a278f7aa57811b1408e49ddc380f742f,
@@ -4371,7 +4387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4561,7 +4577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
