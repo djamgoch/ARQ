@@ -30,9 +30,13 @@ public class SatellitePlayerController : MonoBehaviour {
 			float zInput = -Input.GetAxis("Horizontal") * Time.deltaTime * SATELLITE_ROTATION_SPEED;
 			Vector3 normDir = (planet.position - this.transform.position).normalized;
 			Vector3 currDir = this.transform.up.normalized;
-			relativeZAngle = Vector3.Angle(normDir, currDir);
-			float newZAngle = relativeZAngle;
+			relativeZAngle = Vector3.SignedAngle(normDir, currDir, Vector3.forward);
+			float newZAngle = relativeZAngle + zInput;
+
+            //Debug.Log(relativeZAngle);
+            //Debug.Log(newZAngle);
 			if (newZAngle >= -70.0f && newZAngle <= 70.0f)   // lower: -70, upper: 70
+            //if (relativeZAngle < 70.0f && newZAngle < 70.0f)
 			{
 				this.transform.Rotate(Vector3.forward, zInput, Space.World);
 				//relativeZAngle = newZAngle;
