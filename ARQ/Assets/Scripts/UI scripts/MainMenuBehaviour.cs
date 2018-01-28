@@ -26,7 +26,7 @@ public class MainMenuBehaviour : MonoBehaviour {
 	 */
 	public void StartNewGame()
 	{
-		Cursor.visible = false;
+		Cursor.visible = true;
 		SceneManager.LoadScene(Level_1_Scene_Name);
 		//SceneManager.LoadScene(currentScene.buildIndex + 1);
 	}
