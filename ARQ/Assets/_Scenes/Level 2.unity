@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19200876, g: 0.3096278, b: 0.4283202, a: 1}
+  m_IndirectSpecularColor: {r: 0.19967297, g: 0.32129788, b: 0.44500047, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -209,6 +209,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279765250288380, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_Text
+      value: I'm late for my show. Let's get this over with.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562062686284744, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_Text
+      value: Understood.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114076570338958926, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_Text
+      value: Standby for assistance.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
