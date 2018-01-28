@@ -42,12 +42,34 @@ public class AudioManager : MonoBehaviour {
 
     public void PlaySFX(string trackName)
     {
+        float volume = Random.Range(.75f, 1f);
+        PlaySFX(trackName, volume);
+    }
+
+    public void PlaySFX(string trackName, float volume)
+    {
         AudioClip track = _GetAudioClip(trackName);
         if (track != null)
         {
-            float volume = Random.Range(.75f, 1f);
             sfxPlayer.PlayOneShot(track, volume);
         }
+    }
+
+    public void PlayRandomSFX(params string[] trackNames)
+    {
+        //Debug.Log(trackNames.Length);
+        string randomTrack = trackNames[Random.Range(0, trackNames.Length)];
+        Debug.Log(randomTrack);
+
+        PlaySFX(randomTrack);
+    }
+
+    public void PlayRandomSFX(float volume, params string[] trackNames)
+    {
+        string randomTrack = trackNames[Random.Range(0, trackNames.Length)];
+        Debug.Log(randomTrack);
+
+        PlaySFX(randomTrack, volume);
     }
 
     // Used to manage Ethan's layering of tracks. Will currently update the stage every level.

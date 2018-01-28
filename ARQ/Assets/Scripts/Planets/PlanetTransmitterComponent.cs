@@ -15,7 +15,7 @@ public class PlanetTransmitterComponent : MonoBehaviour {
     private GameObject satellite;
     private Vector3 dirToSatellite;
     private Vector3 dirReflectOffSatellite;
-    private TransmissionReceiverComponent prevReceiver;
+    private TransmissionReceiverComponent currentReceiver;
 
     void Awake()
     {
@@ -56,37 +56,64 @@ public class PlanetTransmitterComponent : MonoBehaviour {
         {
             satelliteTransmission.SetPositions(satellite.transform.position, reflectedHitInfo.point);
 
+            if (currentReceiver != null && reflectedHitInfo.collider.gameObject != currentReceiver.gameObject)
+            {
+                currentReceiver.TransmissionExit();
+                currentReceiver = null;
+            }
+
             if (reflectedHitInfo.collider.gameObject != this.gameObject)
             {
                 // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
                 TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-                if (receiverComponent != null && receiverComponent.isAlreadyActivated == false)
+                if (receiverComponent != null/* && receiverComponent.isAlreadyActivated == false*/)
                 {
-                    if (receiverComponent != prevReceiver && prevReceiver != null)
-                    {
-                        prevReceiver.DisableGlow();     // Hacky code to disable glow
-                    }
-                    prevReceiver = receiverComponent;   // Track this receiver so its glow can be disabled after losing the transmission.
-                    receiverComponent.EnableGlow(Color.yellow);
+                    receiverComponent.TransmissionEnter();
+                    currentReceiver = receiverComponent;
 
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        receiverComponent.ReceiveTransmission(this);
-                    }
+                    //if (receiverComponent != prevReceiver && prevReceiver != null)
+                    //{
+                    //    prevReceiver.DisableGlow();     // Hacky code to disable glow
+                    //}
+                    //prevReceiver = receiverComponent;   // Track this receiver so its glow can be disabled after losing the transmission.
+                    //receiverComponent.EnableGlow(Color.yellow);
+
+                    //if (Input.GetKeyDown(KeyCode.Space))
+                    //{
+                    //    receiverComponent.ReceiveTransmission(this);
+                    //}
                 }
             }
-            else if (prevReceiver != null)
+            else if (currentReceiver != null)
             {
-                prevReceiver.DisableGlow(); // Hacky code to disable glow
+                currentReceiver.DisableGlow(); // Hacky code to disable glow
             }
         }
         else
         {
             satelliteTransmission.SetPositions(satellite.transform.position, satellite.transform.position + (dirReflectOffSatellite * 500f));
 
-            if (prevReceiver != null)
+            if (currentReceiver != null)
             {
-                prevReceiver.DisableGlow(); // Hacky code to disable glow
+                currentReceiver.TransmissionExit();
+                currentReceiver = null;
+                //currentReceiver.DisableGlow(); // Hacky code to disable glow
+            }
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (currentReceiver != null)
+            {
+                AudioManager.instance.PlaySFX("successplanet1");
+                currentReceiver.ReceiveTransmission(this);
+            }
+            else
+            {
+                AudioManager.instance.PlaySFX("reflectfail", .5f);
             }
         }
     }

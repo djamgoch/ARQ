@@ -54,7 +54,7 @@ public class MirrorTransmitterComponent : MonoBehaviour {
             mirrorTransmission.SetPositions(this.transform.position, reflectedHitInfo.point);
             // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
             TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-            if (receiverComponent != null && receiverComponent.isAlreadyActivated == false)
+            if (receiverComponent != null/* && receiverComponent.isAlreadyActivated == false*/)
             {
                 receiverComponent.ReceiveTransmission();
             }

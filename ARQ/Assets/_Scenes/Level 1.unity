@@ -3609,6 +3609,11 @@ Prefab:
       propertyPath: startingPlanet
       value: 
       objectReference: {fileID: 1320961814}
+    - target: {fileID: 114326230792551818, guid: a536d14ff1908274bbbea511d8b1f256,
+        type: 2}
+      propertyPath: numberOfPlanetsToActivate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a536d14ff1908274bbbea511d8b1f256, type: 2}
   m_IsPrefabParent: 0
@@ -4145,8 +4150,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a6075985c968b489093f68cdec24d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAlreadyActivated: 0
+  state: 0
   activationGlow: {fileID: 441190856}
+  OnTransmissionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnTransmissionExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
