@@ -15,6 +15,7 @@ public class PlanetTransmitterComponent : MonoBehaviour {
     private GameObject satellite;
     private Vector3 dirToSatellite;
     private Vector3 dirReflectOffSatellite;
+    private TransmissionReceiverComponent prevReceiver;
 
     void Awake()
     {
@@ -59,19 +60,34 @@ public class PlanetTransmitterComponent : MonoBehaviour {
             {
                 // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
                 TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
-                if (receiverComponent != null && receiverComponent.isAlreadyActivated == false && Input.GetKeyDown(KeyCode.Space))
+                if (receiverComponent != null && receiverComponent.isAlreadyActivated == false)
                 {
-                    receiverComponent.ReceiveTransmission(this);
+                    if (receiverComponent != prevReceiver && prevReceiver != null)
+                    {
+                        prevReceiver.DisableGlow();     // Hacky code to disable glow
+                    }
+                    prevReceiver = receiverComponent;   // Track this receiver so its glow can be disabled after losing the transmission.
+                    receiverComponent.EnableGlow(Color.yellow);
+
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        receiverComponent.ReceiveTransmission(this);
+                    }
                 }
+            }
+            else if (prevReceiver != null)
+            {
+                prevReceiver.DisableGlow(); // Hacky code to disable glow
             }
         }
         else
         {
             satelliteTransmission.SetPositions(satellite.transform.position, satellite.transform.position + (dirReflectOffSatellite * 500f));
-        }
 
-        // For debugging to visualize the physics rays
-        //Debug.DrawRay(this.transform.position, dirToSatellite, Color.green);
-        //Debug.DrawRay(satellite.transform.position, dirReflectOffSatellite * MAX_TRANSMISSION_DISTANCE, Color.green);
+            if (prevReceiver != null)
+            {
+                prevReceiver.DisableGlow(); // Hacky code to disable glow
+            }
+        }
     }
 }

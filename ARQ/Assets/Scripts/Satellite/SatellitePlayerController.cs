@@ -7,8 +7,6 @@ public class SatellitePlayerController : MonoBehaviour {
     public const float SATELLITE_ROTATION_SPEED = 15f;
     public bool isBeingControlled = false;
 	public Transform planet;
-	public float lowerBoundAngle = -73.474f;
-	public float upperBoundAngle = 83.826f;
 
 	private float relativeZAngle;
 	private float normZAngle;
@@ -35,15 +33,7 @@ public class SatellitePlayerController : MonoBehaviour {
 			{
 				this.transform.Rotate(Vector3.forward, zInput);
 				relativeZAngle = newZAngle;
-				//relativeZAngle += zInput;
 			}
-			//Debug.Log(this.name + ": current angle: " + (this.transform.localEulerAngles.z % 180) + ", new angle: " + newZAngle);
-			/*if (newZAngle > -lowerBoundAngle && newZAngle < upperBoundAngle)
-			{
-				this.transform.Rotate(Vector3.forward, zInput);
-				relativeZAngle += zInput;
-			}*/
-			//this.transform.Rotate(Vector3.forward, -Input.GetAxis("Horizontal") * Time.deltaTime * SATELLITE_ROTATION_SPEED);
 		}
 	}
 
