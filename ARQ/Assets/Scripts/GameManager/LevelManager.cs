@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void UpdateScore()
 	{
+        Debug.Log("Update Score");
 		++numOfPlanetsActivated;
 
 		if (numOfPlanetsActivated >= numberOfPlanetsToActivate)
@@ -50,6 +51,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void BeginNextLevel()
 	{
+        Debug.Log(numOfPlanetsActivated);
 		if (playerBeatLevel)
 		{
 			if (AudioManager.instance != null)

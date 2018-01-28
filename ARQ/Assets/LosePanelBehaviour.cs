@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class LosePanelBehaviour : MonoBehaviour {
 
+    public GameObject losePanel;
+
 	// Use this for initialization
 	void Start () {
-		this.gameObject.SetActive(false);
+        losePanel.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -16,6 +18,6 @@ public class LosePanelBehaviour : MonoBehaviour {
 
 	public void ShowLosePanel()
 	{
-		this.gameObject.SetActive(false);
+        losePanel.SetActive(true);
 	}
 }

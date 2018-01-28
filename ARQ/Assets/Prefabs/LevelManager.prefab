@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4654598363928648}
   - component: {fileID: 114326230792551818}
+  - component: {fileID: 114639086704038682}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -51,4 +52,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60016f11ad7f6ed4683e41e8ad35c99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSatellite: {fileID: 0}
+  numberOfPlanetsToActivate: 5
+  startingPlanet: {fileID: 0}
+--- !u!114 &114639086704038682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1682758592544792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1233dfe08c7f55a48bc306b524c90bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

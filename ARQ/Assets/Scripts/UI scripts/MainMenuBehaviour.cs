@@ -7,16 +7,13 @@ using UnityEngine.UI;
 public class MainMenuBehaviour : MonoBehaviour {
 
 	public string Level_1_Scene_Name = "Level 1";
+    public string Intro_Scene_Name = "Intro Scene";
 
-	private Scene currentScene;
-
-	// Use this for initialization
-	void Start () {
-		Cursor.visible = true;
-		currentScene = SceneManager.GetActiveScene();
-
-        AudioManager.instance.PlayBGM("ARQtitlemenu");
-	}
+    public void GoToIntro()
+    {
+        AudioManager.instance.PlaySFX("ARQstartgame2");
+        SceneManager.LoadScene(Intro_Scene_Name);
+    }
 
 	/* Starts the game from level 1.
 	 * Usually called by Start button's button (script) component via OnClick().
@@ -26,9 +23,7 @@ public class MainMenuBehaviour : MonoBehaviour {
         AudioManager.instance.PlaySFX("ARQstartgame2");
         AudioManager.instance.PlayBGM("ARQstage1");
 
-		Cursor.visible = true;
 		SceneManager.LoadScene(Level_1_Scene_Name);
-		//SceneManager.LoadScene(currentScene.buildIndex + 1);
 	}
 
 	/* Exits the game.

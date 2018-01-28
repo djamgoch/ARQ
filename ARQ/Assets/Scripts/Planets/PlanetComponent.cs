@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlanetComponent : MonoBehaviour {
 
     public SatellitePlayerController satellite; // The satellite coupled with this planet
-
     private PlanetTransmitterComponent planetTransmitter;
 
 	private void Awake()

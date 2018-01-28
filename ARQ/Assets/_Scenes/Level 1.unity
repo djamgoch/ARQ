@@ -4422,7 +4422,48 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1304917556331250, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877314767344542, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
+      propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397618729439052, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737593707687484, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279765250288380, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_Text
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 114279765250288380, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f06cdc1477e6ccb4d8a604585eadb601,
+        type: 3}
+    - target: {fileID: 1737593707687484, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}
+      propertyPath: m_Name
+      value: StartButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 114671168824594328, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_Text
+      value: "Humanity is scattered across the stars.\r\n\r\nWe have grown apart.
+        There has never been a way to send messages across the loneliness of space.
+        Until now. \r\n\r\nWith the ARQ Satellite Network, we can once again connect
+        with those who are distant and alone. \r\n\r\nAlign your transmissions and
+        light up the void with your signal.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114671168824594328, guid: a278f7aa57811b1408e49ddc380f742f,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a278f7aa57811b1408e49ddc380f742f, type: 2}

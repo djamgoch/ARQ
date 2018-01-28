@@ -72,10 +72,6 @@ public class PlanetTransmitterComponent : MonoBehaviour {
                     currentReceiver = receiverComponent;
                 }
             }
-            //else if (currentReceiver != null)
-            //{
-            //    currentReceiver.DisableGlow(); // Hacky code to disable glow
-            //}
         }
         else
         {
@@ -91,7 +87,7 @@ public class PlanetTransmitterComponent : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && planetComponent.satellite.isBeingControlled)
         {
             if (currentReceiver != null)
             {
