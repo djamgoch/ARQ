@@ -5,11 +5,16 @@ using UnityEngine;
 public class HideSynopsis : MonoBehaviour {
 
     bool hidden;
+    Transform panel;
 
     // Use this for initialization
     void Start()
     {
         hidden = false;
+        if (transform.Find("Panel") != null)
+        {
+            panel = transform.Find("Panel");
+        }
     }
 
 
@@ -17,8 +22,8 @@ public class HideSynopsis : MonoBehaviour {
     {
         if (!hidden)
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
+            panel.gameObject.SetActive(false);
+            //transform.GetChild(1).gameObject.SetActive(false);
             hidden = true;
         }
     }
