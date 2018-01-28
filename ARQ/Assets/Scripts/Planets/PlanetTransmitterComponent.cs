@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlanetTransmitterComponent : MonoBehaviour {
 
-    public const float MAX_TRANSMISSION_DISTANCE = 20f; // TODO : Move this somewhere else
+    public const float MAX_TRANSMISSION_DISTANCE = 150f; // TODO : Move this somewhere else
 
     private PlanetComponent planetComponent;
     private GameObject satellite;
