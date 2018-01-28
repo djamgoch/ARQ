@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.082653664, g: 0.06917947, b: 0.044657543, a: 1}
+  m_IndirectSpecularColor: {r: 0.079278566, g: 0.06614899, b: 0.04196261, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &349524814 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114326230792551818, guid: a536d14ff1908274bbbea511d8b1f256,
+    type: 2}
+  m_PrefabInternal: {fileID: 897286920}
+  m_Script: {fileID: 11500000, guid: 60016f11ad7f6ed4683e41e8ad35c99e, type: 3}
 --- !u!1 &634954251
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,16 +172,16 @@ MonoBehaviour:
   OnReceiveTransmission:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 634954254}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 349524814}
+        m_MethodName: BeginNextLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -493,10 +499,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1333636489843656, guid: ee27d0bf064937143a55cd22988e6e4e, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee27d0bf064937143a55cd22988e6e4e, type: 2}
   m_IsPrefabParent: 0
@@ -662,3 +664,44 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cc80384d07834e4ca3eda3405144a3a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2030735445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2030735446}
+  - component: {fileID: 2030735447}
+  m_Layer: 0
+  m_Name: SkyboxRotator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2030735446
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030735445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2030735447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2030735445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65876b40f1de3a4099234f2c57dda92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: -1.2
