@@ -12,15 +12,22 @@ public class MirrorTransmitterComponent : MonoBehaviour {
     //private Vector3 dirToSatellite;
     //Mirrors have a single direction they work off of.
     public Vector3 emitDirection;
+    private GameObject transmissionRendererPrefab;
+    private TransmissionRenderer mirrorTransmission;    // The transmission coming from the mirror
+    //private GameObject satellite;
 
     void Awake()
     {
+        emitDirection = emitDirection.normalized;
+        transmissionRendererPrefab = Resources.Load("TransmissionLineRenderer") as GameObject;
         //planetComponent = this.GetComponent<PlanetComponent>();
     }
 
     void Start()
     {
         //mirror = mirrorComponent.gameObject;
+        GameObject mirrorTransmissionObj = Instantiate(transmissionRendererPrefab, this.transform.position, Quaternion.identity);
+        mirrorTransmission = mirrorTransmissionObj.GetComponent<TransmissionRenderer>();
     }
 
     // Update is called once per frame
@@ -37,17 +44,25 @@ public class MirrorTransmitterComponent : MonoBehaviour {
         // Check for object hit by reflected ray
         RaycastHit reflectedHitInfo;
 
+        // Render the transmimssion
+        //mirrorTransmission.SetPositions(this.transform.position, satellite.transform.position);
         bool objectWasHit = Physics.Raycast(transform.position, emitDirection, out reflectedHitInfo, MAX_TRANSMISSION_DISTANCE);
 
         // If an object was hit and it wasn't this planet
         if (objectWasHit /*&& reflectedHitInfo.collider.gameObject != this.gameObject*/)
         {
+            mirrorTransmission.SetPositions(this.transform.position, reflectedHitInfo.point);
             // Try to get its TransmissionReceiverComponent and call its ReceiveTransmission function
             TransmissionReceiverComponent receiverComponent = reflectedHitInfo.collider.GetComponent<TransmissionReceiverComponent>();
             if (receiverComponent != null && receiverComponent.isAlreadyActivated == false)
             {
                 receiverComponent.ReceiveTransmission();
             }
+        }
+        else
+        {
+            mirrorTransmission.SetPositions(this.transform.position, this.transform.position + (emitDirection * 500f));
+
         }
 
         // For debugging to visualize the physics rays
