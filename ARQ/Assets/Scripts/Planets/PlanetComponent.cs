@@ -7,4 +7,9 @@ public class PlanetComponent : MonoBehaviour {
 
     public SatellitePlayerController satellite; // The satellite coupled with this planet
 
+	private void Awake()
+	{
+		satellite.planet = this.transform;
+	}
+
 }
