@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4824356689581450}
   - component: {fileID: 33549702003396324}
   - component: {fileID: 65785037347142148}
+  - component: {fileID: 64130333430859744}
   - component: {fileID: 23760735552784738}
   - component: {fileID: 114149516092390752}
   m_Layer: 0
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971200581325458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.4, y: -5.6, z: 0}
+  m_LocalScale: {x: 0.6254661, y: 0.62546647, z: 0.62546647}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f73f8b8545afac54194527269e888c0c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +84,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971200581325458}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: e1269ba276b272b4e90d696d1ee1668d, type: 3}
+--- !u!64 &64130333430859744
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1971200581325458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: e1269ba276b272b4e90d696d1ee1668d, type: 3}
 --- !u!65 &65785037347142148
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -92,9 +107,9 @@ BoxCollider:
   m_GameObject: {fileID: 1971200581325458}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 6, y: 6, z: 6}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114149516092390752
 MonoBehaviour:
