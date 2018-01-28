@@ -60,7 +60,8 @@ public class LevelManager : MonoBehaviour {
 		}
 		else
 		{
-			SceneManager.LoadScene(currentScene.buildIndex);
+			LosePanelBehaviour lose = FindObjectOfType<Canvas>().GetComponent<LosePanelBehaviour>();
+			lose.ShowLosePanel();
 		}
 	}
 }
