@@ -6,12 +6,19 @@ using UnityEngine.UI;
 public class EscapeMenu : MonoBehaviour {
 
     public Canvas menu;
+    private GameObject panel;
+
+    void Start()
+    {
+        panel = menu.transform.GetChild(0).gameObject;
+        panel.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape) && !menu.transform.GetChild(0).gameObject.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            menu.transform.GetChild(0).gameObject.SetActive(true);
+            panel.SetActive(!panel.activeSelf);
         }
 	}
 }

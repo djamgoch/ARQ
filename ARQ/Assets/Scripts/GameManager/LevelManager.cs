@@ -50,7 +50,6 @@ public class LevelManager : MonoBehaviour {
 
 	public void BeginNextLevel()
 	{
-        Debug.Log(numOfPlanetsActivated);
 		if (playerBeatLevel)
 		{
 			if (AudioManager.instance != null)

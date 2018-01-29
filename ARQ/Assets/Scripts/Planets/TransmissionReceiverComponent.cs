@@ -53,7 +53,6 @@ public class TransmissionReceiverComponent : MonoBehaviour {
             EnableGlow(Color.yellow);
             AudioManager.instance.PlayRandomSFX(.5f, "successmirror1", "successmirror2", "successmirror3");
             state = ReceiverState.TOUCHING;
-            Debug.Log("Calling OnTransmissionEnter");
         }
     }
 
@@ -63,7 +62,6 @@ public class TransmissionReceiverComponent : MonoBehaviour {
         {
             OnTransmissionExit.Invoke();
             DisableGlow();
-            Debug.Log("Calling OnTransmissionExit");
             state = ReceiverState.IDLE;
         }
     }
